@@ -1,27 +1,34 @@
+import { Link } from 'react-router-dom';
 
-function Header() {
-    return (
-    
-        <header className="d-flex space-between align-center p-40">
+
+function Header(props) {
+  return (
+
+    <header className="d-flex space-between align-center p-40">
+      <Link to='/'>
         <div className="d-flex align-center">
-          <img width= {40} height={40} src="/img/logo.png"/>
+          <img width={40} height={40} src="/img/logo.png" alt='Logotype' />
           <div className='headerInfo'>
             <h3 className='text-uppercase'>React Sneakers </h3>
             <p className='opacity-5'>Магазин лучших кроссовок</p>
           </div>
         </div>
-        <ul className='d-flex'>
-          <li className='mr-25'>
-            <img width= {20} height={20} src="/img/Card.svg"/>
-            <span>1205 руб.</span>
+      </Link>
+      <ul className='d-flex'>
+        <li onClick={props.onClickCart} className='mr-25 cu-p'>
+          <img width={20} height={20} src="/img/Card.svg" alt='Корзина' />
+          <span>1205 руб.</span>
+        </li>
+        <Link to='/favorites'>
+          <li className="mr-30 cu-p">
+            <img width={20} height={20} src="/img/Heart.svg" alt='Закладки' />
           </li>
-          <li>
-            <img width= {20} height={20} src="/img/User.svg"/>
-          </li>
-        </ul>
-      
-      </header>
-    
-    );
-    }
-    export default Header;
+        </Link>
+        <li>
+          <img width={20} height={20} src="/img/User.svg" alt='Пользователь' />
+        </li>
+      </ul>
+    </header>
+  );
+}
+export default Header;

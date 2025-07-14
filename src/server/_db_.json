@@ -1,0 +1,60 @@
+{
+    "groupedEvents": {
+      "mikLogin_1": [
+        {
+          "personalInfo": {
+            "login": "mikLogin_1",
+            "fio": "mikFio_1"
+          },
+          "events": [
+            {
+              "id": null,
+              "type": "MEETING",
+              "name": "someName_1",
+              "date": "2022-11-11",
+              "startTime": "10:11",
+              "endTime": "16:11",
+              "comment": "someComment_1"
+            }
+          ]
+        }
+      ],
+      "mikLogin_2": [
+        {
+          "personalInfo": {
+            "login": "mikLogin_2",
+            "fio": "mikFio_2"
+          },
+          "events": [
+            {
+              "id": null,
+              "type": "MEETING",
+              "name": "someName_3",
+              "date": "2022-11-11",
+              "startTime": "09:11",
+              "endTime": "11:11",
+              "comment": "someComment_3"
+            },
+            {
+              "id": null,
+              "type": "MEETING",
+              "name": "someName_4",
+              "date": "2022-11-11",
+              "startTime": "15:11",
+              "endTime": "16:11",
+              "comment": "someComment_4"
+            }
+          ]
+        }
+      ],
+      "mikLogin_3": [
+        {
+          "personalInfo": {
+            "login": "mikLogin_3",
+            "fio": "mikFio_3"
+          },
+          "events": []
+        }
+      ]
+    }
+  }
