@@ -1,13 +1,19 @@
 import React from 'react';
 import styles from './Card.module.scss'
+import AppContext from '../../context';
 
-function Card({ id, title, imageUrl, price, onFavorite, onPlus, favorited = false, added = false }) {
-    const [isAdded, setIsAdded] = React.useState(added);
+
+function Card({ id, title, imageUrl, price, onFavorite, onPlus, favorited = false, 
+    // added = false 
+}) {
+    
+    const {isItemAdded} = React.useContext(AppContext);
+    // const [isAdded, setIsAdded] = React.useState(added);
     const [isFavorite, setIsFavorite] = React.useState(favorited);
 
     const onClickPlus = () => {
         onPlus({ id, title, imageUrl, price });
-        setIsAdded(!isAdded);
+        // setIsAdded(!isAdded);
     };
     const onClickFavorite = () => {
         onFavorite({ id, title, imageUrl, price });
@@ -32,7 +38,7 @@ function Card({ id, title, imageUrl, price, onFavorite, onPlus, favorited = fals
                 <img
                     className={styles.plus}
                     onClick={onClickPlus}
-                    src={isAdded ? '/img/checked.svg' : '/img/Plus.svg'}
+                    src={isItemAdded(id) ? '/img/checked.svg' : '/img/Plus.svg'}
                     alt="Plus" />
             </div>
         </div>

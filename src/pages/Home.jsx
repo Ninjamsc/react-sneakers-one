@@ -1,4 +1,5 @@
 import Card from '../components/Card';
+import React from 'react';
 
 function Home({
   items,
@@ -7,11 +8,13 @@ function Home({
   onChangeSearchInput,
   onAddToCart,
   onAddToFavorite,
-  cartItems
+  // cartItems
 }
 ) 
 
 {
+  // const {isItemAdded} = React.useContext(AppContext);
+
   return (
     <div className='content p-40 '>
       <div className='d-flex align-center justify-between mb-40'>
@@ -46,7 +49,8 @@ function Home({
               // onFavorite={(obj) => console.log(obj)}
               // onAddToFavorite={onAddToFavorite}
               onPlus={(obj) => onAddToCart(obj)}
-              added={cartItems.find(obj => Number(obj.id) === Number(item.id))}
+              // added={isItemAdded(item && item.id)}
+              // added={cartItems.find(obj => Number(obj.id) === Number(item.id))}
             // console.log(obj)
             />
           ))}

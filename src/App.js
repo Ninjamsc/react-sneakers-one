@@ -9,6 +9,11 @@ import Home from './pages/Home';
 // import Home1 from './pages/Home1';
 import Favorites from './pages/Favorites';
 import axios from 'axios';
+import AppContext from './context';
+
+// export const AppContext = React.createContext({})
+
+
 
 function App() {
   const [items, setItems] = React.useState([]);
@@ -67,29 +72,37 @@ function App() {
     // console.log(event.targetValue);
     setSearchValue(event.target.value);
   };
+
+  const isItemAdded = (id) => {
+    return cartItems.find(obj => Number(obj.id) === Number(id))
+
+  }
+
   return (
-    <div className="wrapper clear">
-      {cartOpened && <Drawer items={cartItems} onClose={() => setCartOpened(false)} onRemove={onRemoveItem} />}
-      <Header onClickCart={() => setCartOpened(true)} />
-      <Routes>
-        <Route path='/' exect element={
-          <Home
-            cartItems={cartItems}
-            items={items}
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
-            onChangeSearchInput={onChangeSearchInput}
-            onAddToCart={onAddToCart}
-            onAddToFavorite={onAddToFavorite}
-          />
-        }>
-        </Route>
-        <Route path='/favorites' exect element={
-          <Favorites items={favorites} onAddToFavorite={onAddToFavorite}
-          />}>
-        </Route>
-      </Routes>
-    </div>
+    <AppContext.Provider value={{ cartItems, items, favorites, isItemAdded }}>
+      <div className="wrapper clear">
+        {cartOpened && <Drawer items={cartItems} onClose={() => setCartOpened(false)} onRemove={onRemoveItem} />}
+        <Header onClickCart={() => setCartOpened(true)} />
+        <Routes>
+          <Route path='/' exect element={
+            <Home
+              cartItems={cartItems}
+              items={items}
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+              onChangeSearchInput={onChangeSearchInput}
+              onAddToCart={onAddToCart}
+              onAddToFavorite={onAddToFavorite}
+            />
+          }>
+          </Route>
+          <Route path='/favorites' exect element={
+            <Favorites onAddToFavorite={onAddToFavorite}
+            />}>
+          </Route>
+        </Routes>
+      </div>
+    </AppContext.Provider>
   );
 }
 
