@@ -29,3 +29,5 @@ function Favorites({ onAddToFavorite }) {
 
 
 export default Favorites;
+console.log("Да, я понимаю русский!");
+
