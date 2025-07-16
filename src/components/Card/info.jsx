@@ -14,10 +14,7 @@ const Info = ({ title, image, decription }) => {
         alt="text"
       />
       <h2>{title}</h2>
-      <p className="opacity-6">
-      { decription   
-      }
-      </p>
+      <p className="opacity-6">{decription}</p>
       <button onClick={() => setCartOpened(false)} className="greenButton">
         <img src="/img/arrow.svg" alt="Arrow" />
         Вернуться назад
