@@ -6,11 +6,11 @@ import AppContext from "../context";
 import axios from "axios";
 
 function Drawer({ onClose, onRemove, items = [] }) {
-  const { setCartItems } = React.useContext(AppContext);
+  const { cartItems, setCartItems } = React.useContext(AppContext);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
 
   const onClickOrder = () => {
-    axios.post("http://localhost:3001/orders", obj);
+    axios.post("http://localhost:3001/orders", cartItems);
     setIsOrderComplete(true);
     setCartItems([]);
     // items.forEach((item) => {
