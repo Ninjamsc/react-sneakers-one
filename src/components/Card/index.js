@@ -12,10 +12,7 @@ function Card({
   favorited = false,
   // added = false
 }) {
-/*************  ✨ Windsurf Command 🌟  *************/
   const { isItemAdded } = React.useContext(AppContext);
-  const isFunctionOnPlus = typeof onPlus === "function";
-/*******  3a165cce-f6ab-4e09-b53d-7ff9426262a6  *******/
   // const [isAdded, setIsAdded] = React.useState(added);
   const [isFavorite, setIsFavorite] = React.useState(favorited);
 
