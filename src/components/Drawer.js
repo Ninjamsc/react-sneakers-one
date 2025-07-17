@@ -1,7 +1,7 @@
 // import styles from './Card.module.scss'
 // import axios from "axios";
 import React from "react";
-import Info from "./Card/info";
+import Info from "./Card/Info";
 import AppContext from "../context";
 import axios from "axios";
 
