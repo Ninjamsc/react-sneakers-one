@@ -7,14 +7,19 @@ import axios from "axios";
 
 function Drawer({ onClose, onRemove, items = [] }) {
   const { cartItems, setCartItems } = React.useContext(AppContext);
-  const [orderId , setOrderId] = React.useState(null);
+  const [orderId, setOrderId] = React.useState(null);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
 
   const onClickOrder = async () => {
-    const { data } = await axios.post("http://localhost:3001/orders", cartItems);
-    setOrderId(data.id);
-    setIsOrderComplete(true);
-    setCartItems([]);
+    try {
+      const { data } = await axios.post(
+        "http://localhost:3001/orders",
+        cartItems
+      );
+      setOrderId(data.id);
+      setIsOrderComplete(true);
+      setCartItems([]);
+    } catch (error) {}
     // items.forEach((item) => {
     //   axios.delete(`http://localhost:3001/cart/${item.id}`);
     // });
