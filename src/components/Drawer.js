@@ -19,9 +19,11 @@ function Drawer({ onClose, onRemove, items = [] }) {
       setOrderId(data.id);
       setIsOrderComplete(true);
       setCartItems([]);
-    } catch (error) {
-      'Не удалось создать заказ'
-    }
+    } catch (error){
+    alert ( 
+      'Не удалось создать заказ!'
+    );
+    };
     // items.forEach((item) => {
     //   axios.delete(`http://localhost:3001/cart/${item.id}`);
     // });
