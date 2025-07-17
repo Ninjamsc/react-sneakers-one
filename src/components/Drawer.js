@@ -4,9 +4,7 @@ import React from "react";
 import Info from "./Card/info";
 import AppContext from "../context";
 
-
 function Drawer({ onClose, onRemove, items = [] }) {
-
   const { setCartItems } = React.useContext(AppContext);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
 
@@ -79,8 +77,12 @@ function Drawer({ onClose, onRemove, items = [] }) {
         ) : (
           <Info
             title={isOrderComplete ? "Заказ оформлен!" : "Корзина пустая"}
-            description="Добавьте хотябы одну пару кроссовок, чтобы сделать заказ."
-            image="/img/empty-cart.jpg"
+            description={
+              isOrderComplete
+                ? "Ваш заказ #18 скоро будет передан курьерской доставке"
+                : "Добавьте хотябы одну пару кроссовок, чтобы сделать заказ."
+            }
+            image={isOrderComplete ? "/img/Order.png" : "/img/empty-cart.jpg"}
           />
         )}
       </div>
