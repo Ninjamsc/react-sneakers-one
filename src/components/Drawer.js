@@ -19,7 +19,11 @@ function Drawer({ onClose, onRemove, items = [] }) {
         //   items: cartItems,
         // }
       );
-     await axios.put("http://localhost:3001/cart/null", []);
+    //  await axios.put("http://localhost:3001/cart/null", []);
+
+    items.forEach((item) => {
+        axios.delete(`http://localhost:3001/cart/${item.id}`);
+      });
       setOrderId(data.id);
       setIsOrderComplete(true);
       setCartItems([]);
