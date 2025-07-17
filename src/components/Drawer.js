@@ -22,7 +22,7 @@ function Drawer({ onClose, onRemove, items = [] }) {
       setOrderId(data.id);
       setIsOrderComplete(true);
       setCartItems([]);
-      axios.post("http://localhost:3001/cart", []);
+      axios.put("http://localhost:3001/cart", []);
     } catch (error) {
       alert("Не удалось создать заказ!");
     }
