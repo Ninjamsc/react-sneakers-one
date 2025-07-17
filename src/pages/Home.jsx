@@ -1,5 +1,5 @@
-import Card from '../components/Card';
-import React from 'react';
+import Card from "../components/Card";
+import React from "react";
 
 function Home({
   items,
@@ -9,33 +9,37 @@ function Home({
   onAddToCart,
   onAddToFavorite,
   // cartItems
-}
-) 
-
-{
+}) {
   // const {isItemAdded} = React.useContext(AppContext);
 
   return (
-    <div className='content p-40 '>
-      <div className='d-flex align-center justify-between mb-40'>
-        <h1>{searchValue ? `Поиск по запросу:'${searchValue}'` : 'Все кроссовки'}</h1>
-        <div className='search-block d-flex'>
+    <div className="content p-40 ">
+      <div className="d-flex align-center justify-between mb-40">
+        <h1>
+          {searchValue ? `Поиск по запросу:'${searchValue}'` : "Все кроссовки"}
+        </h1>
+        <div className="search-block d-flex">
           <img src="/img/Search.svg" alt="Search" />
           {searchValue && (
             <img
-              onClick={() => setSearchValue('')}
-              className='clear cu-p'
-              src='/img/remove.svg'
-              alt='Clear'
+              onClick={() => setSearchValue("")}
+              className="clear cu-p"
+              src="/img/remove.svg"
+              alt="Clear"
             />
           )}
-          <input onChange={onChangeSearchInput} value={searchValue} placeholder='Поиск...'></input>
-
+          <input
+            onChange={onChangeSearchInput}
+            value={searchValue}
+            placeholder="Поиск..."
+          ></input>
         </div>
       </div>
-      <div className='d-flex flex-wrap'>
+      <div className="d-flex flex-wrap">
         {items
-          .filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()))
+          .filter((item) =>
+            item.title.toLowerCase().includes(searchValue.toLowerCase())
+          )
           .map((item) => (
             <Card
               key={item.id}
@@ -51,12 +55,12 @@ function Home({
               onPlus={(obj) => onAddToCart(obj)}
               // added={isItemAdded(item && item.id)}
               // added={cartItems.find(obj => Number(obj.id) === Number(item.id))}
-            // console.log(obj)
+              // console.log(obj)
             />
           ))}
       </div>
     </div>
-  )
+  );
 }
 
 export default Home;

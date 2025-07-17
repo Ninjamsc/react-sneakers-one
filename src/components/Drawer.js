@@ -14,7 +14,7 @@ function Drawer({ onClose, onRemove, items = [] }) {
     try {
       const { data } = await axios.post(
         "http://localhost:3001/orders",
-        
+
         {
           items: cartItems,
         }
