@@ -10,8 +10,9 @@ function Drawer({ onClose, onRemove, items = [] }) {
   const [orderId , setOrderId] = React.useState(null);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
 
-  const onClickOrder = () => {
-    axios.post("http://localhost:3001/orders", cartItems);
+  const onClickOrder = async () => {
+    const { data } = await axios.post("http://localhost:3001/orders", cartItems);
+    setOrderId(data.id);
     setIsOrderComplete(true);
     setCartItems([]);
     // items.forEach((item) => {
