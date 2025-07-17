@@ -7,6 +7,7 @@ import axios from "axios";
 
 function Drawer({ onClose, onRemove, items = [] }) {
   const { cartItems, setCartItems } = React.useContext(AppContext);
+  const [orderId , setOrderId] = React.useState(null);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
 
   const onClickOrder = () => {
