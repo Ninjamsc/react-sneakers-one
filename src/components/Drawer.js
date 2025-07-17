@@ -14,7 +14,10 @@ function Drawer({ onClose, onRemove, items = [] }) {
     try {
       const { data } = await axios.post(
         "http://localhost:3001/orders",
-        cartItems
+        
+        {
+          items: cartItems,
+        }
       );
       setOrderId(data.id);
       setIsOrderComplete(true);
