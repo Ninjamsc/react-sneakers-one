@@ -2,19 +2,22 @@
 // import axios from "axios";
 import React from "react";
 import Info from "./Card/info";
+import AppContext from "../context";
+
 
 function Drawer({ onClose, onRemove, items = [] }) {
 
+  const { setCartItems } = React.useContext(AppContext);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
 
   const onClickOrder = () => {
     setIsOrderComplete(true);
+    setCartItems([]);
     // items.forEach((item) => {
     //   axios.delete(`http://localhost:3001/cart/${item.id}`);
     // });
     // setCartItems([]);
   };
-
 
   return (
     <div className="overlay">
