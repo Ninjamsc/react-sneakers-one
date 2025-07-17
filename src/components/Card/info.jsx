@@ -9,7 +9,7 @@ const Info = ({ title, image, decription }) => {
       <img
         className="mb-20"
         width="120px"
-        height="120px"
+        // height="120px"
         src={image}
         alt="text"
       />
