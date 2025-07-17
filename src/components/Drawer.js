@@ -14,10 +14,10 @@ function Drawer({ onClose, onRemove, items = [] }) {
     try {
       const { data } = await axios.post(
         "http://localhost:3001/orders",
-
-        {
-          items: cartItems,
-        }
+        cartItems,
+        // {
+        //   items: cartItems,
+        // }
       );
      await axios.put("http://localhost:3001/cart", []);
       setOrderId(data.id);
@@ -94,7 +94,7 @@ function Drawer({ onClose, onRemove, items = [] }) {
             title={isOrderComplete ? "Заказ оформлен!" : "Корзина пустая"}
             description={
               isOrderComplete
-                ? `"Ваш заказ # ${orderId} скоро будет передан курьерской доставке"`
+                ? `Ваш заказ # ${orderId} скоро будет передан курьерской доставке`
                 : "Добавьте хотябы одну пару кроссовок, чтобы сделать заказ."
             }
             image={isOrderComplete ? "/img/Order.png" : "/img/empty-cart.jpg"}
