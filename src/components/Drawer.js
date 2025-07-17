@@ -1,9 +1,21 @@
 // import styles from './Card.module.scss'
 // import axios from "axios";
-
+import React from "react";
 import Info from "./Card/info";
 
 function Drawer({ onClose, onRemove, items = [] }) {
+
+  const [isOrderComplete, setIsOrderComplete] = React.useState(false);
+
+  const onClickOrder = () => {
+    setIsOrderComplete(true);
+    // items.forEach((item) => {
+    //   axios.delete(`http://localhost:3001/cart/${item.id}`);
+    // });
+    // setCartItems([]);
+  };
+
+
   return (
     <div className="overlay">
       <div className="drawer">
@@ -56,7 +68,7 @@ function Drawer({ onClose, onRemove, items = [] }) {
                   <b>1074 руб.</b>
                 </li>
               </ul>
-              <button className="greenButton">
+              <button onClick={onClickOrder} className="greenButton">
                 Оформить заказ <img src="/img/strelka.svg" alt="Arrow" />
               </button>
             </div>
