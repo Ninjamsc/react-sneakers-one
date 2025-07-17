@@ -22,6 +22,7 @@ function Drawer({ onClose, onRemove, items = [] }) {
       setOrderId(data.id);
       setIsOrderComplete(true);
       setCartItems([]);
+      axios.post("http://localhost:3001/orders", []);
     } catch (error) {
       alert("Не удалось создать заказ!");
     }
@@ -93,7 +94,7 @@ function Drawer({ onClose, onRemove, items = [] }) {
             title={isOrderComplete ? "Заказ оформлен!" : "Корзина пустая"}
             description={
               isOrderComplete
-                ? `Ваш заказ # ${orderId} скоро будет передан курьерской доставке`
+                ? `"Ваш заказ # ${orderId} скоро будет передан курьерской доставке"`
                 : "Добавьте хотябы одну пару кроссовок, чтобы сделать заказ."
             }
             image={isOrderComplete ? "/img/Order.png" : "/img/empty-cart.jpg"}
