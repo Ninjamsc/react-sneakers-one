@@ -19,7 +19,7 @@ function Drawer({ onClose, onRemove, items = [] }) {
         //   items: cartItems,
         // }
       );
-     await axios.put("http://localhost:3001/cart", []);
+     await axios.put("http://localhost:3001/cart.clear", []);
       setOrderId(data.id);
       setIsOrderComplete(true);
       setCartItems([]);
