@@ -4,6 +4,7 @@ import AppContext from "../context";
 const Info = ({ title, image, decription }) => {
   const { setCartOpened } = React.useContext(AppContext);
 
+  console.log({title}, {image}, {decription});
   return (
     <div className="cartEmpty d-flex align-center justify-center flex-column flex">
       <img
