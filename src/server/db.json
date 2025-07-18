@@ -31,7 +31,14 @@
       "imageUrl": "/img/sneakers/card-2.webp"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "2",
+      "title": "Мужские Кроссовки Nike Air Max 270S",
+      "imageUrl": "/img/sneakers/card-2.webp",
+      "price": 15600
+    }
+  ],
   "favorites": [],
   "orders": [
     {
@@ -92,6 +99,17 @@
     },
     {
       "id": "38bc",
+      "items": [
+        {
+          "id": "1",
+          "title": "Мужские Кроссовки Nike Blazer Mid Suede1",
+          "imageUrl": "/img/sneakers/card-1.webp",
+          "price": 12999
+        }
+      ]
+    },
+    {
+      "id": "cea4",
       "items": [
         {
           "id": "1",
