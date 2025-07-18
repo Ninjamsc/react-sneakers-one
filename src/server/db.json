@@ -37,54 +37,14 @@
       "title": "Мужские Кроссовки Nike Blazer Mid Suede1",
       "imageUrl": "/img/sneakers/card-1.webp",
       "price": 12999
+    },
+    {
+      "id": "2",
+      "title": "Мужские Кроссовки Nike Air Max 270S",
+      "imageUrl": "/img/sneakers/card-2.webp",
+      "price": 15600
     }
   ],
   "favorites": [],
-  "orders": [
-    {
-      "id": "ee89",
-      "items": [
-        {
-          "id": "1",
-          "title": "Мужские Кроссовки Nike Blazer Mid Suede1",
-          "imageUrl": "/img/sneakers/card-1.webp",
-          "price": 12999
-        },
-        {
-          "id": "2",
-          "title": "Мужские Кроссовки Nike Air Max 270S",
-          "imageUrl": "/img/sneakers/card-2.webp",
-          "price": 15600
-        }
-      ]
-    },
-    {
-      "id": "3c27",
-      "items": [
-        {
-          "id": "3",
-          "title": "Мужские Кроссовки Nike Blazer Mid Suede2",
-          "imageUrl": "/img/sneakers/card-3.webp",
-          "price": 8499
-        },
-        {
-          "id": "4",
-          "title": "Мужские Кроссовки Nike Blazer Mid Suede3",
-          "imageUrl": "/img/sneakers/card-4.webp",
-          "price": 14000
-        }
-      ]
-    },
-    {
-      "id": "ca3e",
-      "items": [
-        {
-          "id": "1",
-          "title": "Мужские Кроссовки Nike Blazer Mid Suede1",
-          "imageUrl": "/img/sneakers/card-1.webp",
-          "price": 12999
-        }
-      ]
-    }
-  ]
+  "orders": []
 }
