@@ -34,6 +34,16 @@
   "cart": [],
   "favorites": [],
   "orders": [
-
+    {
+      "id": "3431",
+      "items": [
+        {
+          "id": "2",
+          "title": "Мужские Кроссовки Nike Air Max 270S",
+          "imageUrl": "/img/sneakers/card-2.webp",
+          "price": 15600
+        }
+      ]
+    }
   ]
 }
