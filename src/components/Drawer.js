@@ -8,7 +8,12 @@ import axios from "axios";
 function Drawer({ onClose, onRemove, items = [] }) {
   const { cartItems, setCartItems } = React.useContext(AppContext);
   const [orderId, setOrderId] = React.useState(null);
+
+  console.log({orderId}, {setOrderId});
+
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
+
+  console.log({isOrderComplete}, {setIsOrderComplete});
 
   const onClickOrder = async () => {
     try {
@@ -25,6 +30,9 @@ function Drawer({ onClose, onRemove, items = [] }) {
         axios.delete(`http://localhost:3001/cart/${item.id}`);
       });
       setOrderId(data.id);
+
+      console.log({data});
+
       setIsOrderComplete(true);
       setCartItems([]);
     } catch (error) {
