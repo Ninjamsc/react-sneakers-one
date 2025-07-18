@@ -31,14 +31,7 @@
       "imageUrl": "/img/sneakers/card-2.webp"
     }
   ],
-  "cart": [
-    {
-      "id": "1",
-      "title": "Мужские Кроссовки Nike Blazer Mid Suede1",
-      "imageUrl": "/img/sneakers/card-1.webp",
-      "price": 12999
-    }
-  ],
+  "cart": [],
   "favorites": [],
   "orders": [
     {
@@ -72,6 +65,17 @@
           "title": "Мужские Кроссовки Nike Blazer Mid Suede3",
           "imageUrl": "/img/sneakers/card-4.webp",
           "price": 14000
+        }
+      ]
+    },
+    {
+      "id": "ca3e",
+      "items": [
+        {
+          "id": "1",
+          "title": "Мужские Кроссовки Nike Blazer Mid Suede1",
+          "imageUrl": "/img/sneakers/card-1.webp",
+          "price": 12999
         }
       ]
     }
