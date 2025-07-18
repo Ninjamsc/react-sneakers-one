@@ -48,7 +48,6 @@ function Drawer({ onClose, onRemove, items = [] }) {
             alt="text"
           ></img>
         </h2>
-
         {items.length > 0 ? (
           <div>
             <div className="items">
