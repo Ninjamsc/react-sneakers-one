@@ -14,10 +14,10 @@ function Drawer({ onClose, onRemove, items = [] }) {
     try {
       const { data } = await axios.post(
         "http://localhost:3001/orders",
-        cartItems,
-        // {
-        //   items: cartItems,
-        // }
+        // cartItems,
+        {
+          items: cartItems,
+        }
       );
     //  await axios.put("http://localhost:3001/cart/null", []);
 
