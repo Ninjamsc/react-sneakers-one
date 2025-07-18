@@ -48,17 +48,7 @@ function Drawer({ onClose, onRemove, items = [] }) {
             alt="text"
           ></img>
         </h2>
-        {
-        cartItems.length === 0 && isOrderComplete ? (
-          <Info
-            title="Заказ оформлен!"
-            description={`Ваш заказ # ${orderId} скоро будет передан курьерской доставке`}
-            image="/img/Order.png"
-          />
-        ) : (
-        
-        
-        items.length > 0 ? (
+        {items.length > 0 ? (
           <div>
             <div className="items">
               {items.map((obj) => (
@@ -104,11 +94,14 @@ function Drawer({ onClose, onRemove, items = [] }) {
           </div>
         ) : (
           <Info
-          title="Корзина пустая"
-          description="Добавьте хотябы одну пару кроссовок, чтобы сделать заказ."
-          image="/img/empty-cart.jpg"
-        />
-        )
+            title={isOrderComplete ? "Заказ оформлен!" : "Корзина пустая"}
+            description={
+              isOrderComplete
+                ? `Ваш заказ # ${orderId} скоро будет передан курьерской доставке`
+                : "Добавьте хотябы одну пару кроссовок, чтобы сделать заказ."
+            }
+            image={isOrderComplete ? "/img/Order.png" : "/img/empty-cart.jpg"}
+          />
         )}
       </div>
     </div>
