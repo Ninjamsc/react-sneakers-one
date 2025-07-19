@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "codeium.codeium"
+        "codeium.codeium",
+        "dzhavat.bracket-pair-toggler"
     ]
 }
