@@ -1,26 +1,24 @@
 {
-    "gitdoc.enabled": true,
-    "workbench.startupEditor": "none",
-    "terminal.integrated.enableMultiLinePasteWarning": "auto",
-    "window.zoomLevel": -1,
-    "git.postCommitCommand": "push",
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.unicodeHighlight.allowedLocales": {
-        "ru": true
-    },
-    "git.ignoreRebaseWarning": true,
-    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-    "editor.language.colorizedBracketPairs": [
-        
-
-    ],
-    "workbench.colorCustomizations": {
-        "Editor: Bracket Pair Colorization": true
-    }
-
+  "gitdoc.enabled": true,
+  "workbench.startupEditor": "none",
+  "terminal.integrated.enableMultiLinePasteWarning": "auto",
+  "window.zoomLevel": -1,
+  "git.postCommitCommand": "push",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.unicodeHighlight.allowedLocales": {
+    "ru": true
+  },
+  "git.ignoreRebaseWarning": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "workbench.colorCustomizations": {
+    "Editor: Bracket Pair Colorization": true
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.guides.bracketPairsHorizontal": true
 }
