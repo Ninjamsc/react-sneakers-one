@@ -16,6 +16,7 @@
   "git.ignoreRebaseWarning": true,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "workbench.colorCustomizations": {
+    
     "Editor: Bracket Pair Colorization": true
   },
   "editor.bracketPairColorization.enabled": true,

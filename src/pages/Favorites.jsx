@@ -27,6 +27,4 @@ function Favorites({ onAddToFavorite }) {
   );
 }
 
-
 export default Favorites;
-

@@ -9,11 +9,11 @@ function Drawer({ onClose, onRemove, items = [] }) {
   const { cartItems, setCartItems } = React.useContext(AppContext);
   const [orderId, setOrderId] = React.useState(null);
 
-  console.log({orderId}, {setOrderId});
+  console.log({ orderId }, { setOrderId });
 
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
 
-  console.log({isOrderComplete}, {setIsOrderComplete});
+  console.log({ isOrderComplete }, { setIsOrderComplete });
 
   const onClickOrder = async () => {
     try {
@@ -24,14 +24,14 @@ function Drawer({ onClose, onRemove, items = [] }) {
           items: cartItems,
         }
       );
-    //  await axios.put("http://localhost:3001/cart/null", []);
+      //  await axios.put("http://localhost:3001/cart/null", []);
 
-    items.forEach((item) => {
+      items.forEach((item) => {
         axios.delete(`http://localhost:3001/cart/${item.id}`);
       });
       setOrderId(data.id);
 
-      console.log({data});
+      console.log({ data });
 
       setIsOrderComplete(true);
       setCartItems([]);
@@ -109,7 +109,6 @@ function Drawer({ onClose, onRemove, items = [] }) {
                 ? `Ваш заказ # ${orderId} скоро будет передан курьерской доставке.`
                 : "Добавьте хотябы одну пару кроссовок, чтобы сделать заказ."
             }
-            
             image={isOrderComplete ? "/img/Order.png" : "/img/empty-cart.jpg"}
           />
         )}
