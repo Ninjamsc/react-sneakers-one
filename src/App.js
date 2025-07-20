@@ -8,6 +8,7 @@ import Drawer from "./components/Drawer";
 import Home from "./pages/Home";
 // import Home1 from './pages/Home1';
 import Favorites from "./pages/Favorites";
+import Orders from "./pages/Orders";
 import axios from "axios";
 import AppContext from "./context";
 
@@ -34,7 +35,6 @@ function App() {
   }, []);
   const onAddToCart = (obj) => {
     if (cartItems.find((item) => Number(item.id) === Number(obj.id))) {
-      
       axios.delete(`http://localhost:3001/cart/${obj.id}`);
       setCartItems((prev) =>
         prev.filter((item) => Number(item.id) !== Number(obj.id))
@@ -84,6 +84,8 @@ function App() {
         isItemAdded,
         setCartOpened,
         setCartItems,
+        onAddToCart,
+        onAddToFavorite,
       }}
     >
       <div className="wrapper clear">
@@ -116,6 +118,7 @@ function App() {
             exect
             element={<Favorites onAddToFavorite={onAddToFavorite} />}
           ></Route>
+          <Route path="/orders" exect element={<Orders />}></Route>
         </Routes>
       </div>
     </AppContext.Provider>

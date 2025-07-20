@@ -40,12 +40,13 @@ function Card({
           <span>Цена</span>
           <b>{price} руб.</b>
         </div>
-        <img
+        {onPlus && (<img
           className={styles.plus}
           onClick={onClickPlus}
           src={isItemAdded(id) ? "/img/checked.svg" : "/img/Plus.svg"}
           alt="Plus"
         />
+        )}
       </div>
     </div>
   );
