@@ -34,7 +34,7 @@ function App() {
   }, []);
   const onAddToCart = (obj) => {
     if (cartItems.find((item) => Number(item.id) === Number(obj.id))) {
-      З;
+      
       axios.delete(`http://localhost:3001/cart/${obj.id}`);
       setCartItems((prev) =>
         prev.filter((item) => Number(item.id) !== Number(obj.id))
