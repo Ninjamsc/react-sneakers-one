@@ -10,7 +10,7 @@ import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Orders from "./pages/Orders";
 import axios from "axios";
-import AppContext from "./context";
+import AppContext from "./context"; //удалить?
 
 // export const AppContext = React.createContext({})
 
@@ -22,7 +22,7 @@ function App() {
   const [cartOpened, setCartOpened] = React.useState(false);
 
   React.useEffect(() => {
-    axios.get("http://localhost:3001/iems").then((res) => {
+    axios.get("http://localhost:3001/items").then((res) => {
       setItems(res.data);
       console.log(res);
     });
@@ -31,6 +31,8 @@ function App() {
     });
     axios.get("http://localhost:3001/favorites").then((res) => {
       setFavorites(res.data);
+
+      console.log("Сетаем фавориты", res.data);
     });
   }, []);
   const onAddToCart = (obj) => {
@@ -56,12 +58,12 @@ function App() {
   // console.log(cartItems);
   const onAddToFavorite = (obj) => {
     console.log(obj);
-    if (favorites.find((favObj) => favObj.id === obj.id)) {
+    if (favorites.find((favObj) => Number(favObj.id) === Number(obj.id))) {
       axios.delete(`http://localhost:3001/favorites/${obj.id}`);
       setFavorites((prev) => prev.filter((item) => item.id !== obj.id));
       //    console.log(obj)
     } else {
-      axios.post("http://localhost:3001/favorites", obj);
+      axios.post("http://localhost:3001/favorites", obj); // У Арчаков так: const{data}=await axios...  
       setFavorites((prev) => [...prev, obj]);
       //    console.log(obj)
     }
@@ -75,6 +77,12 @@ function App() {
     return cartItems.find((obj) => Number(obj.id) === Number(id));
   };
 
+    const isFavoritAdded = (id) => {
+    return favorites.find((obj) => Number(obj.id) === Number(id));
+  };
+
+
+
   return (
     <AppContext.Provider
       value={{
@@ -86,6 +94,7 @@ function App() {
         setCartItems,
         onAddToCart,
         onAddToFavorite,
+        isFavoritAdded,
       }}
     >
       <div className="wrapper clear">
@@ -116,7 +125,7 @@ function App() {
           <Route
             path="/favorites"
             exect
-            element={<Favorites onAddToFavorite={onAddToFavorite} />}
+            element={<Favorites />} // Удалено onAddToFavorite={onAddToFavorite}
           ></Route>
           <Route path="/orders" exect element={<Orders />}></Route>
         </Routes>

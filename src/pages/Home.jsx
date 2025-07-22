@@ -1,5 +1,6 @@
 import Card from "../components/Card";
 import React from "react";
+import AppContext from "../context";
 
 function Home({
   items,
@@ -10,7 +11,7 @@ function Home({
   onAddToFavorite,
   // cartItems
 }) {
-  // const {isItemAdded} = React.useContext(AppContext);
+  const {isFavoritAdded} = React.useContext(AppContext);
 
   return (
     <div className="content p-40 ">
@@ -53,7 +54,7 @@ function Home({
               // onFavorite={(obj) => console.log(obj)}
               // onAddToFavorite={onAddToFavorite}
               onPlus={(obj) => onAddToCart(obj)}
-              // added={isItemAdded(item && item.id)}
+              favorited={isFavoritAdded(item.id)} //item && 
               // added={cartItems.find(obj => Number(obj.id) === Number(item.id))}
               // console.log(obj)
             />
