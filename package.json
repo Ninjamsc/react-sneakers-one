@@ -1,5 +1,6 @@
 {
   "name": "react-sneakers",
+  "homepage": "https://mikmikmik.github.io/react-sneakers",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,7 +21,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server -w src/server/db.json -p 3001"
+    "server": "json-server -w src/server/db.json -p 3001",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -42,9 +45,8 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-private-property-in-object": "^7.27.1",
+    "gh-pages": "^6.3.0",
     "json-server": "^1.0.0-alpha.23",
     "prettier": "3.6.2"
-    
-
   }
 }
