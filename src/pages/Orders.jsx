@@ -5,7 +5,7 @@ import AppContext from "../context";
 
 function Orders() {
 
-  const { onAddToFavorite, onAddToCart } = React.useContext(AppContext);
+  const { onAddToFavorite } = React.useContext(AppContext);
   const [orders, setOrders] = React.useState([]);
 
   React.useEffect(() => {

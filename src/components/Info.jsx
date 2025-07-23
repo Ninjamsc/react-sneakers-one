@@ -4,7 +4,7 @@ import AppContext from "../context";
 const Info = ({ title, image, description }) => {
   const { setCartOpened } = React.useContext(AppContext);
 
-  console.log( "В Info переданы пропсы:",{title}, {image}, {description});
+  console.log("В Info переданы пропсы:", { title }, { image }, { description });
 
   return (
     <div className="cartEmpty d-flex align-center justify-center flex-column flex">

@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Card.module.scss";
 import AppContext from "../../context";
-import App from "../../App";
 
 function Card({
   id,
